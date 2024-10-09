@@ -73,3 +73,9 @@
 .course-description li {
   margin-bottom: 5px; /* Отступ между строками */
 }
+
+@media (max-width: 768px) {
+  .card-right {
+    display: none;
+  }
+}
