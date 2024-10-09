@@ -1,0 +1,59 @@
+.Header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Выровнять логотип и навигацию по левому краю */
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column; /* Вертикальное направление на мобильных */
+    height: auto; /* Автоматическая высота */
+  }
+}
+
+
+.logo {
+  width: 50px; /* Уменьшаем размер логотипа */
+  height: 50px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center; /* Центрируем навбар */
+  align-items: center; /* Вертикальное выравнивание */
+  height: 70px; /* Высота навбара */
+  background-color: #333; /* Цвет фона навбара */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.separator {
+  color: white;
+  margin: 0 10px;
+}
+
+body {
+  padding-top: 70px; /* Увеличиваем отступ для корректного отображения после уменьшения хедера */
+}

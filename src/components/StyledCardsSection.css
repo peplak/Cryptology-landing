@@ -1,0 +1,27 @@
+.styled-card {
+    background-color: white;
+    border: 2px solid #cccccc;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .styled-card:hover {
+    transform: translateY(-10px);
+    border-color: #4a90e2;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .styled-card {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+  
+  .styled-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  

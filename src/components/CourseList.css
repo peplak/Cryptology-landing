@@ -1,0 +1,13 @@
+.course-card {
+    border: 1px solid #ccc; /* Граница для карточки */
+    border-radius: 8px; /* Скругленные углы */
+    padding: 15px; /* Уменьшенный отступ */
+    margin: 20px auto; /* Центрирование карточек */
+    width: 70%; /* Уменьшенная ширина карточки */
+    transition: box-shadow 0.3s; /* Плавный эффект тени */
+  }
+  
+  .course-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Эффект тени на наведение */
+  }
+  

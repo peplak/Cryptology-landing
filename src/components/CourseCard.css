@@ -1,0 +1,75 @@
+.course-card {
+  position: relative;
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 60%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-left {
+  flex: 1;
+  width: 20%; 
+}
+
+.card-right {
+  flex: 1;
+  width: 20%; 
+  text-align: right;
+}
+
+.card-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.buy-button {
+  padding: 20px 40px; /* Увеличиваем кнопку */
+  font-size: 1.2em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
+
+.price {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+.course-description {
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+}
+
+.course-description {
+  list-style-type: none; /* Убираем маркеры списка */
+  padding: 0;
+  margin: 0;
+}
+
+.course-description li {
+  margin-bottom: 5px; /* Отступ между строками */
+}

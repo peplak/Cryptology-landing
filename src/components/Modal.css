@@ -1,0 +1,46 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Убедитесь, что модалка выше остальных элементов */
+  }
+  
+  .modal-content {
+    background-color: white; /* Фон для модалки */
+    border-radius: 8px; /* Скругленные углы */
+    padding: 20px; /* Отступы внутри модалки */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для модалки */
+    display: flex;
+    flex-direction: column; /* Расположение элементов в колонку */
+    align-items: center; /* Центрирование элементов */
+  }
+  
+  .payment-options {
+    margin-bottom: 20px; /* Отступ снизу между кнопками оплаты и кнопкой закрытия */
+  }
+  
+  .payment-button {
+    background-color: #4a90e2; /* Приятный цвет кнопки */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px 0; /* Отступ между кнопками */
+    cursor: pointer;
+    border-radius: 4px; /* Скругленные углы */
+    transition: background-color 0.3s; /* Плавный эффект */
+  }
+  
+  .payment-button:hover {
+    background-color: #357abd; /* Темнее на наведение */
+  }
+  
+  .close-button {
+    margin-top: 10px; /* Отступ сверху от кнопки оплаты */
+  }
+  

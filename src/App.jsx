@@ -1,27 +1,49 @@
+import React, { useState } from 'react';
+import Header from './components/Header';
+import InfoSection from './components/InfoSection';
+import StyledCardsSection from './components/StyledCardsSection';
+import CourseContentSection from './components/CourseContentSection';
+import BuySection from './components/BuySection';
+import ContactsSection from './components/ContactsSection';
+import Modal from './components/Modal';
 import './App.css';
 
 function App() {
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleBuyClick = (course) => {
+    setSelectedCourse(course);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+      <Header />
+      <main>
+        <InfoSection />
+        <div className="section-divider"></div> {/* Разделительная линия */}
+        <StyledCardsSection />
+        <div className="section-divider"></div> {/* Разделительная линия */}
+        <CourseContentSection />
+        <div className="section-divider"></div> {/* Разделительная линия */}
+        <BuySection onBuyClick={handleBuyClick} />
+        <div className="section-divider"></div> {/* Разделительная линия */}
+        <ContactsSection />
+      </main>
+      {isModalOpen && (
+        <Modal course={selectedCourse} onClose={closeModal} />
+      )}
+      <footer>
+      <p>© 2024 Криптология. Все права защищены.</p>
+      <a href="#privacy">Политика конфиденциальности</a> | 
+      <a href="#terms">Условия использования</a>
+    </footer>
+
     </div>
   );
 }
