@@ -2,7 +2,7 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Выровнять логотип и навигацию по левому краю */
+  justify-content: flex-start; /* Выравниваем логотип и бургер-меню по краям */
   padding: 10px 20px;
   background-color: #333;
   color: white;
@@ -13,20 +13,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column; /* Вертикальное направление на мобильных */
-    height: auto; /* Автоматическая высота */
-  }
-}
-
-
 .logo {
-  width: 50px; /* Уменьшаем размер логотипа */
+  width: 50px;
   height: 50px;
-  margin-right: 20px;
   cursor: pointer;
 }
 
@@ -39,8 +28,14 @@
   display: flex;
   justify-content: center; /* Центрируем навбар */
   align-items: center; /* Вертикальное выравнивание */
-  height: 70px; /* Высота навбара */
-  background-color: #333; /* Цвет фона навбара */
+  height: 70px;
+  background-color: #333;
+  transition: max-height 0.3s ease; /* Плавный переход для открывающегося меню */
+  overflow: hidden; /* Скрываем контент при закрытом меню */
+}
+
+.nav-links.open {
+  max-height: 300px; /* Увеличиваем максимальную высоту при открытом меню */
 }
 
 .nav-links a {
@@ -54,6 +49,45 @@
   margin: 0 10px;
 }
 
-body {
-  padding-top: 70px; /* Увеличиваем отступ для корректного отображения после уменьшения хедера */
+.burger {
+  display: none; /* Скрыть бургер-меню по умолчанию */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+  .Header{
+    justify-content: space-between;
+  }
+  .nav-links {
+    position: absolute; /* Позиционируем меню абсолютно */
+    top: 70px; /* Под хедером */
+    left: 0;
+    width: 100%; /* Занимаем всю ширину */
+    flex-direction: column; /* Вертикальное направление на мобильных */
+    max-height: 0; /* Начальная максимальная высота 0 */
+    background-color: #333; /* Цвет фона для мобильной версии */
+  }
+
+  .nav-links.open {
+    height: 70px; /* Максимальная высота открытого меню */
+  }
+
+  .separator{
+    display: none;
+  }
+
+  .burger {
+    display: flex; /* Показываем бургер-меню на мобильных устройствах */
+    margin-right: 60px; /* Сдвигаем бургер-меню вправо */
+  }
 }
