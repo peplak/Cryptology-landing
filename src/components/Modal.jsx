@@ -7,7 +7,7 @@ const Modal = ({ onClose }) => {
       <div className="modal-content">
         <h2>Выбор способа оплаты</h2>
         <div className="payment-options">
-          <button className="payment-button">Оплатить при помощи .....</button>
+          <button className="payment-button">Оплатить</button>
         </div>
         <button className="close-button" onClick={onClose}>
           Закрыть
