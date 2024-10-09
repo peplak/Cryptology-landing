@@ -78,6 +78,10 @@
   .card-right {
     display: none;
   }
+  .price {
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
 
   .course-card {
     width: 90%; /* Увеличить ширину карточки на мобильных устройствах */
@@ -91,7 +95,7 @@
   }
 
   .buy-button {
-    font-size: 18px; /* Увеличить размер шрифта кнопки */
+    font-size: 12px; /* Увеличить размер шрифта кнопки */
     padding: 12px 24px; /* Увеличить внутренние отступы кнопки */
   }
 }
