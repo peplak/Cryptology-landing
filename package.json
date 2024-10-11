@@ -4,6 +4,7 @@
   "private": true,
   "homepage": " https://peplak.github.io/Cryptology-landing/",
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
@@ -16,7 +17,6 @@
     "@adobe/css-tools": "^4.3.1",
     "postcss": "^8.4.31"
   },
-  
   "scripts": {
     "start": "BROWSER=none WDS_SOCKET_PORT=0 vite --port 3000",
     "build": "vite build",

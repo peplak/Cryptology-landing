@@ -4,7 +4,7 @@ import InfoSection from './components/InfoSection';
 import StyledCardsSection from './components/StyledCardsSection';
 import CourseContentSection from './components/CourseContentSection';
 import BuySection from './components/BuySection';
-import ContactsSection from './components/ContactsSection';
+import Contacts from './components/Contacts';
 import Modal from './components/Modal';
 import './App.css';
 
@@ -33,7 +33,7 @@ function App() {
         <div className="section-divider"></div> {/* Разделительная линия */}
         <BuySection onBuyClick={handleBuyClick} />
         <div className="section-divider"></div> {/* Разделительная линия */}
-        <ContactsSection />
+        <Contacts />
       </main>
       {isModalOpen && (
         <Modal course={selectedCourse} onClose={closeModal} />
