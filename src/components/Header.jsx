@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Header.css';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Состояние для отслеживания открытости меню
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Переключаем состояние меню
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -20,17 +20,17 @@ const Header = () => {
       <div className="logo" onClick={scrollToTop}>
         <img src="https://pngimg.com/d/bitcoin_PNG31.png" alt="Logo" />
       </div>
-      <div className="burger" onClick={toggleMenu}>
-        <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
-        <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
-        <div className={`bar ${isMenuOpen ? 'active' : ''}`}></div>
+      <div className={`burger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-        <a href="#info">Информация о курсах</a>
+      <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <a href="#info" onClick={toggleMenu}>Информация о курсах</a>
         <span className="separator">|</span>
-        <a href="#buy">Купить</a>
+        <a href="#buy" onClick={toggleMenu}>Купить</a>
         <span className="separator">|</span>
-        <a href="#contacts">Контакты</a>
+        <a href="#contacts" onClick={toggleMenu}>Контакты</a>
       </nav>
     </header>
   );

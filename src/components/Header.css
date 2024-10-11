@@ -2,7 +2,7 @@
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Выравниваем логотип и бургер-меню по краям */
+  justify-content: flex-start;
   padding: 10px 20px;
   background-color: #333;
   color: white;
@@ -24,18 +24,41 @@
   max-height: 100%;
 }
 
-.nav-links {
-  display: flex;
-  justify-content: center; /* Центрируем навбар */
-  align-items: center; /* Вертикальное выравнивание */
-  height: 70px;
-  background-color: #333;
-  transition: max-height 0.3s ease; /* Плавный переход для открывающегося меню */
-  overflow: hidden; /* Скрываем контент при закрытом меню */
+/* Бургер-меню */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
 }
 
-.nav-links.open {
-  max-height: 300px; /* Увеличиваем максимальную высоту при открытом меню */
+.burger span {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Навигация */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-links a {
@@ -49,45 +72,35 @@
   margin: 0 10px;
 }
 
-.burger {
-  display: none; /* Скрыть бургер-меню по умолчанию */
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.bar {
-  height: 3px;
-  width: 25px;
-  background-color: white;
-  margin: 4px 0;
-  transition: all 0.3s ease;
-}
-
-/* Медиа-запрос для мобильных устройств */
+/* Стили для мобильных устройств */
 @media (max-width: 768px) {
   .Header{
     justify-content: space-between;
   }
   .nav-links {
-    position: absolute; /* Позиционируем меню абсолютно */
-    top: 70px; /* Под хедером */
+    display: none;
+    position: absolute;
+    top: 70px;
     left: 0;
-    width: 100%; /* Занимаем всю ширину */
-    flex-direction: column; /* Вертикальное направление на мобильных */
-    max-height: 0; /* Начальная максимальная высота 0 */
-    background-color: #333; /* Цвет фона для мобильной версии */
+    width: 100%;
+    flex-direction: column;
+    background-color: #333;
+    padding: 10px 0;
   }
 
   .nav-links.open {
-    height: 70px; /* Максимальная высота открытого меню */
-  }
-
-  .separator{
-    display: none;
+    display: flex;
   }
 
   .burger {
-    display: flex; /* Показываем бургер-меню на мобильных устройствах */
-    margin-right: 60px; /* Сдвигаем бургер-меню вправо */
+    display: flex;
+    margin-right: 50px;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+  .separator{
+    display: none;
   }
 }

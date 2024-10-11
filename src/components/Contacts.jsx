@@ -8,7 +8,7 @@ function Contacts() {
       return <p>Спасибо за сообщение!</p>;
   }
   return (
-    <div className="contact-form-container">
+    <div className="contact-form-container" id='contacts'>
       <form onSubmit={handleSubmit}>
         <h2>Свяжитесь с нами!</h2> 
         
