@@ -1,42 +1,57 @@
-.contact-form {
+.contact-form-container {
+  display: flex;
+  justify-content: center; /* Центрируем форму горизонтально */
+  align-items: center; /* Центрируем форму вертикально */
+  min-height: 80vh; /* Высота контейнера для центрирования */
+}
+
+form {
+  background-color: #f9f9f95e; /* Фон формы */
+  padding: 20px; /* Внутренние отступы */
+  border-radius: 10px; /* Скругление углов */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для формы */
+  max-width: 400px; /* Максимальная ширина формы */
+  width: 100%; /* Ширина формы */
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
 }
 
-.contact-form label {
-  margin-top: 10px;
-  font-weight: bold;
+label {
+  margin-bottom: 5px; /* Отступ под полями */
+  font-weight: bold; /* Жирный шрифт для меток */
 }
 
-.contact-form input, 
-.contact-form textarea {
-  width: 100%;
+input, textarea {
+  margin-bottom: 10px;
   padding: 10px;
-  margin-top: 5px;
-  border-radius: 5px;
   border: 1px solid #ccc;
+  border-radius: 5px;
   font-size: 16px;
 }
 
-.contact-form button {
-  margin-top: 15px;
+button {
   padding: 10px;
-  background-color: #333;
+  background-color: #007bff; /* Цвет кнопки */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  transition: background-color 0.3s;
 }
 
-.contact-form button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+button:hover {
+  background-color: #0056b3; /* Цвет кнопки при наведении */
 }
 
-.contact-form textarea {
-  resize: vertical;
+textarea {
+  resize: none; /* Отключить изменение размера текстового поля */
+  height: 100px; /* Высота текстового поля */
+}
+
+h2 {
+  text-align: center; /* Центрируем заголовок */
+  margin-bottom: 20px; /* Отступ снизу */
+  font-size: 24px; /* Размер шрифта */
+  color: #333; /* Цвет текста */
 }
